@@ -1,6 +1,6 @@
 {
   "name": "ecommerce",
-  "description": "Next.js + Sanity: A Powerful Website Starter with Real-time Visual Editing",
+  "description": "Malayali Mood – Captures the modern Malayali vibe.",
   "scripts": {
     "dev": "concurrently \"npm run dev --workspace=nextjs-app\" \"npm run dev --workspace=studio\""
   },
