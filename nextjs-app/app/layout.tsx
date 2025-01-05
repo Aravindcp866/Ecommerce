@@ -86,6 +86,8 @@ export default async function RootLayout({
           <Header />
           {data?.length && data.map((e: any, i: number) => {
             return (
+
+              
               <div className="p-10" key={i} >
                 <ProductListItem props={e}  />
               </div>)
