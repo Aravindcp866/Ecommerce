@@ -16,7 +16,7 @@ export const structure: StructureResolver = (S: StructureBuilder) =>
     .items([
       ...S.documentTypeListItems()
         // Remove the "assist.instruction.context" and "settings" content  from the list of content types
-        .filter((listItem: any) => !DISABLED_TYPES.includes(listItem.getId()))
+        .filter((listItem: any) => !DISABLED_TYPES.includes (listItem.getId()))
         // Pluralize the title of each document type.  This is not required but just an option to consider.
         .map((listItem) => {
           return listItem.title(pluralize(listItem.getTitle() as string))
@@ -25,5 +25,9 @@ export const structure: StructureResolver = (S: StructureBuilder) =>
       S.listItem()
         .title('Site Settings')
         .child(S.document().schemaType('settings').documentId('siteSettings'))
+        .icon(CogIcon),
+        S.listItem()
+        .title('Stock List')
+        .child(S.document().schemaType('Stocks').documentId('Stocks'))
         .icon(CogIcon),
     ])

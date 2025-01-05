@@ -14,6 +14,8 @@ import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import { handleError } from "./client-utils";
+import CTA from "./components/Cta";
+import Header from "./components/Header";
 
 /**
  * Generate metadata for the page.
@@ -77,7 +79,7 @@ export default async function RootLayout({
           )}
 
           <SanityLive onError={handleError} />
-          Malayali Mood - Captures the modern Malayali vibe.
+          <Header/>
         </section>
         <SpeedInsights />
       </body>
