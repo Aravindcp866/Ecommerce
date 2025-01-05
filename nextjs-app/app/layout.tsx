@@ -64,11 +64,10 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const { isEnabled: isDraftMode } = await draftMode();
-  const {data} = await sanityFetch({
+  const { data } = await sanityFetch({
     query: listProduct,
     params: {},
   });
-  console.log(  data,'cp')
 
   return (
     <html lang="en" className={`${inter.variable} bg-white text-black`}>
@@ -84,14 +83,14 @@ export default async function RootLayout({
           )}
 
           <SanityLive onError={handleError} />
-          <Header/>
-          {data?.length && data.map((e: any,i:number)=>{
-            return(
-            <div className="p-10">
-              <ProductListItem props={e} key={i}/>
-            </div>)
+          <Header />
+          {data?.length && data.map((e: any, i: number) => {
+            return (
+              <div className="p-10" key={i}>
+                <ProductListItem props={e}  />
+              </div>)
           })}
-          
+
         </section>
         <SpeedInsights />
       </body>
