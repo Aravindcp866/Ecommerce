@@ -85,10 +85,10 @@ export default async function RootLayout({
 
           <SanityLive onError={handleError} />
           <Header/>
-          {data?.length && data.map((e: any)=>{
+          {data?.length && data.map((e: any,i:number)=>{
             return(
             <div className="p-10">
-              <ProductListItem props={e} key={data?._id}/>
+              <ProductListItem props={e} key={i}/>
             </div>)
           })}
           
