@@ -53,6 +53,25 @@ export const morePostsQuery = defineQuery(`
   }
 `);
 
+
+
+export const listProduct = defineQuery(`*[_type == 'Stocks']{
+  ...,
+ "image" :productImage {
+    asset->{
+      _ref,
+      url,
+      _type,
+      altText,
+      description,
+      "tags": opt.media.tags[]->name.current,
+      title
+    }
+  }
+}`)
+
+
+
 export const postQuery = defineQuery(`
   *[_type == "post" && slug.current == $slug] [0] {
     content[]{

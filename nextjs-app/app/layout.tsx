@@ -11,16 +11,14 @@ import DraftModeToast from "@/app/components/DraftModeToast";
 ;
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
-import { settingsQuery } from "@/sanity/lib/queries";
+import { listProduct, settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import { handleError } from "./client-utils";
 import CTA from "./components/Cta";
 import Header from "./components/Header";
+import ProductListItem from "./components/ProductListItem";
 
-/**
- * Generate metadata for the page.
- * Learn more: https://nextjs.org/docs/app/api-reference/functions/generate-metadata#generatemetadata-function
- */
+
 export async function generateMetadata(): Promise<Metadata> {
   const { data: settings } = await sanityFetch({
     query: settingsQuery,
@@ -58,12 +56,19 @@ const inter = Inter({
   display: "swap",
 });
 
+
+
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const { isEnabled: isDraftMode } = await draftMode();
+  const {data} = await sanityFetch({
+    query: listProduct,
+    params: {},
+  });
+  console.log(  data,'cp')
 
   return (
     <html lang="en" className={`${inter.variable} bg-white text-black`}>
@@ -80,6 +85,13 @@ export default async function RootLayout({
 
           <SanityLive onError={handleError} />
           <Header/>
+          {data?.length && data.map((e: any)=>{
+            return(
+            <div className="p-10">
+              <ProductListItem props={e} key={data?._id}/>
+            </div>)
+          })}
+          
         </section>
         <SpeedInsights />
       </body>
