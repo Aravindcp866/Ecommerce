@@ -1,9 +1,4 @@
-/**
- * This component uses Portable Text to render a post body.
- *
 
- *
- */
 
 import {
   PortableText,
