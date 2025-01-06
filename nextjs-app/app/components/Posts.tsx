@@ -94,7 +94,7 @@ export const AllPosts = async () => {
     >
       {data.map((post: any) => (
         <Post key={post._id} post={post} />
-      ))}
+      ))} 
     </Posts>
   );
 };
