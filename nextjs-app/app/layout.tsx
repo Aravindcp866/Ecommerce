@@ -19,15 +19,15 @@ export default async function RootLayout({
     <html lang="en" className="bg-white text-black">
       <body>
         <section>
-          {/* <Header /> */}
-          {/* <div className="grid grid-cols-2 gap-2 p-3">
+          <Header />
+          <div className="grid grid-cols-2 gap-2 p-3">
             {data?.length && data.map((e: any, i: number) => {
               return (
                 <div className="lg:p-10 " key={i} >
                   <ProductListItem props={e} />
                 </div>)
             })}
-          </div> */}
+          </div>
         </section>
       </body>
     </html>
