@@ -1,13 +1,21 @@
+import Link from "next/link";
 import React from "react";
 
+
+
 export default function ProductListItem({ props }: any) {
+
     return (
         <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 sm:w-1/2 lg:w-1/3 mx-auto">
-            <img
-                className="w-full h-40 object-cover rounded-t-lg sm:h-48 lg:h-56"
-                src={props?.image?.asset?.url}
-                alt={props?.image?.asset?.altText || "Product Image"}
-            />
+            
+                <img
+
+                    className="w-full h-40 object-cover rounded-t-lg sm:h-48 lg:h-56"
+                    src={props?.image?.asset?.url}
+                    alt={props?.image?.asset?.altText || "Product Image"}
+                />
+         
+
             <div className="p-1">
                 <a href="#">
                     <p className="text-balance text-center sm:text-sm sm:font-normal text-gray-800 dark:text-white sm:text-orange-600 sm:mt-2">
@@ -26,6 +34,6 @@ export default function ProductListItem({ props }: any) {
                     </a>
                 </div>
             </div>
-        </div>
+        </div >
     );
-}
+}   
