@@ -1,22 +1,32 @@
+import { sanityFetch } from "@/sanity/lib/live";
+import { fetchProduct } from "@/sanity/lib/queries";
+import Image from "next/image";
 
 interface Props {
   params: {
-    id: string
-  }
+    id: string;
+  };
 }
 
 export default async function ProductPage({ params }: Props) {
+  const productId = params?.id;
   try {
-    // No need to await params.id directly
+    const product = await sanityFetch({
+      query: fetchProduct,
+      params: { "productId": params.id }
+    });
     return (
       <div className="container mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">Product Details</h1>
-        <p>Product ID: {params.id}</p>
-        {/* Add your product details here */}
+        <Image
+          src={product?.data?.image?.asset?.url}
+          alt={""}
+          width={300}
+          height={300}
+        />
       </div>
     );
   } catch (error) {
-    console.error('Error in ProductPage:', error);
+    console.error("Error in ProductPage:", error);
     return <div>Error loading product</div>;
   }
 }

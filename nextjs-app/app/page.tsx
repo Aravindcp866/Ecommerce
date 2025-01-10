@@ -10,17 +10,17 @@ export default async function Page() {
     query: listProduct,
     params: {},
   });
-  
+
   return (
     <>
-              <div className="grid grid-cols-2 gap-2 p-3">
-            {data?.length && data.map((e: any, i: number) => {
-              return (
-                <div className="lg:p-10 " key={i} >
-                  <ProductListItem props={e} />
-                </div>)
-            })}
-          </div>
+      <div className="grid grid-cols-2 gap-2 p-3">
+        {data?.length && data.map((e: any, i: number) => {
+          return (
+            <div className="lg:p-10 " key={i} >
+              <ProductListItem props={e} />
+            </div>)
+        })}
+      </div>
     </>
   );
 }

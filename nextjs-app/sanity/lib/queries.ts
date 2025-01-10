@@ -71,6 +71,25 @@ export const listProduct = defineQuery(`*[_type == 'Stocks']{
 }`)
 
 
+export const fetchProduct = defineQuery(
+  `*[_type == 'Stocks' && _id == $productId]{
+    ...,
+    "image": productImage {
+      asset->{
+        _ref,
+        url,
+        _type,
+        altText,
+        description,
+        "tags": opt.media.tags[]->name.current,
+        title
+      }
+    }
+  }[0]`
+);
+
+
+
 
 export const postQuery = defineQuery(`
   *[_type == "post" && slug.current == $slug] [0] {
