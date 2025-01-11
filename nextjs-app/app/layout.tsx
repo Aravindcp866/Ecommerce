@@ -11,8 +11,8 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="bg-white text-black">
-      <body>
-        <section>
+      <body className="font-sans ">
+        <section className="w-full h-full">
           <Header />
           {children} 
         </section>
