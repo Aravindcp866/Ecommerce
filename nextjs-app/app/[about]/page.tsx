@@ -6,31 +6,31 @@ export default function Page() {
             <p className="text-gray-600 leading-relaxed mb-4">
                 Malayali Made is a brand dedicated to showcasing the rich heritage and culture of Kerala through
                 meticulously crafted products. Our slogan, 
-                <span className="italic text-gray-800"> "Where crafted with pride, worn with swag,"</span> reflects our 
+                <span className="italic text-gray-800"> &quot;Where crafted with pride, worn with swag,&quot;</span> reflects our 
                 commitment to delivering high-quality items that resonate with authenticity and style.
             </p>
             <h2 className="text-xl font-semibold mt-6 mb-2 text-gray-700">Leadership Team</h2>
             <div className="mb-4">
-                <h3 className="text-lg font-medium text-gray-800">Chief Designer & Officer, Co-founder</h3>
+                <h3 className="text-lg font-medium text-gray-800">Chief Designer &amp; Officer, Co-founder</h3>
                 <p className="font-semibold">Vishnu SP</p>
                 <p className="text-gray-600 leading-relaxed">
                     Vishnu SP is the visionary behind the creative direction of Malayali Made. With a keen eye for design
                     and innovation, Vishnu ensures that every product is a masterpiece that embodies the essence of
-                    Kerala's culture and artistry.
+                    Kerala&apos;s culture and artistry.
                 </p>
             </div>
             <div className="mb-4">
-                <h3 className="text-lg font-medium text-gray-800">Chief Executive Officer (CEO) & Co-founder</h3>
+                <h3 className="text-lg font-medium text-gray-800">Chief Executive Officer (CEO) &amp; Co-founder</h3>
                 <p className="font-semibold">Akash AS</p>
                 <p className="text-gray-600 leading-relaxed">
                     Akash AS brings his entrepreneurial spirit and strategic thinking to Malayali Made. As the CEO, he
-                    drives the company's vision and oversees its growth, ensuring that Malayali Made remains a leader in
+                    drives the company&apos;s vision and oversees its growth, ensuring that Malayali Made remains a leader in
                     its niche.
                 </p>
             </div>
             <div className="mb-4">
                 <h3 className="text-lg font-medium text-gray-800">
-                    Chief Technology Officer (CTO), Business Strategist & Co-founder
+                    Chief Technology Officer (CTO), Business Strategist &amp; Co-founder
                 </h3>
                 <p className="font-semibold">Aravind CP</p>
                 <p className="text-gray-600 leading-relaxed">
@@ -55,7 +55,7 @@ export default function Page() {
                 </li>
             </ul>
             <p className="mt-6 text-gray-600 leading-relaxed">
-                Join us on this journey to celebrate Kerala's vibrant culture with pride and swag!
+                Join us on this journey to celebrate Kerala&apos;s vibrant culture with pride and swag!
             </p>
         </section>
     );
