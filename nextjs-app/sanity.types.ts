@@ -648,6 +648,9 @@ export type ListProductResult = Array<never>;
 // Variable: fetchProduct
 // Query: *[_type == 'Stocks' && _id == $productId]{    ...,    "image": productImage {      asset->{        _ref,        url,        _type,        altText,        description,        "tags": opt.media.tags[]->name.current,        title      }    }  }[0]
 export type FetchProductResult = null;
+// Variable: fetchProductWithRating
+// Query: *[_type == 'Stocks' && _id ==$productId]{  ...,  "image" :productImage {    asset->{      _ref,      url,      _type,      altText,      description,      "tags": opt.media.tags[]->name.current,      title    }  },  "customerReview":customerReview->}[0]
+export type FetchProductWithRatingResult = null;
 // Variable: postQuery
 // Query: *[_type == "post" && slug.current == $slug] [0] {    content[]{    ...,    markDefs[]{      ...,        link {      ...,      _type == "link" => {        "page": page->slug.current,        "post": post->slug.current        }      }    }  },      _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  "author": author->{firstName, lastName, picture},  }
 export type PostQueryResult = {
@@ -740,6 +743,7 @@ declare module "@sanity/client" {
     "\n  *[_type == \"post\" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {\n    \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{firstName, lastName, picture},\n\n  }\n": MorePostsQueryResult;
     "*[_type == 'Stocks']{\n  ...,\n \"image\" :productImage {\n    asset->{\n      _ref,\n      url,\n      _type,\n      altText,\n      description,\n      \"tags\": opt.media.tags[]->name.current,\n      title\n    }\n  }\n}": ListProductResult;
     "*[_type == 'Stocks' && _id == $productId]{\n    ...,\n    \"image\": productImage {\n      asset->{\n        _ref,\n        url,\n        _type,\n        altText,\n        description,\n        \"tags\": opt.media.tags[]->name.current,\n        title\n      }\n    }\n  }[0]": FetchProductResult;
+    "*[_type == 'Stocks' && _id ==$productId]{\n  ...,\n  \"image\" :productImage {\n    asset->{\n      _ref,\n      url,\n      _type,\n      altText,\n      description,\n      \"tags\": opt.media.tags[]->name.current,\n      title\n    }\n  },\n  \"customerReview\":customerReview->\n}[0]": FetchProductWithRatingResult;
     "\n  *[_type == \"post\" && slug.current == $slug] [0] {\n    content[]{\n    ...,\n    markDefs[]{\n      ...,\n      \n  link {\n      ...,\n      _type == \"link\" => {\n        \"page\": page->slug.current,\n        \"post\": post->slug.current\n        }\n      }\n\n    }\n  },\n    \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{firstName, lastName, picture},\n\n  }\n": PostQueryResult;
     "\n  *[_type == \"post\" && defined(slug.current)]\n  {\"slug\": slug.current}\n": PostPagesSlugsResult;
     "\n  *[_type == \"page\" && defined(slug.current)]\n  {\"slug\": slug.current}\n": PagesSlugsResult;
