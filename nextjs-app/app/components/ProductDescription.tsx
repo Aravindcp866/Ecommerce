@@ -5,6 +5,7 @@ interface IProductInterface {
     productDescription: string
 }
 export default function ProductDescription({ productName, productDescription, size }: IProductInterface) {
+    if(!productName || !productDescription || !size) return
     return (
         <>
             <h2 className='font-semibold text-4xl py-2'>{productName}</h2>

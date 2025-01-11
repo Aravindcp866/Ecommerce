@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "./components/Header";
 import Link from "next/link";
+import Footer from "./components/Footer";
 
 export default async function RootLayout({
   children,
@@ -15,6 +16,7 @@ export default async function RootLayout({
         <section className="w-full h-full">
           <Header />
           {children} 
+          <Footer/>
         </section>
       </body>
     </html>
