@@ -88,6 +88,24 @@ export const fetchProduct = defineQuery(
   }[0]`
 );
 
+export const fetchProductWithRating = defineQuery(
+  `*[_type == 'Stocks' && _id ==$productId]{
+  ...,
+  "image" :productImage {
+    asset->{
+      _ref,
+      url,
+      _type,
+      altText,
+      description,
+      "tags": opt.media.tags[]->name.current,
+      title
+    }
+  },
+  "customerReview":customerReview->
+}[0]`
+);
+
 
 
 
