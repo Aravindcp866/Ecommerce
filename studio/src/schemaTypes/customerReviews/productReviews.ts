@@ -1,5 +1,5 @@
 // schemas/productReview.js
-export default {
+export const productReviews  = {
     name: 'productReview',
     title: 'Product Review',
     type: 'document',
