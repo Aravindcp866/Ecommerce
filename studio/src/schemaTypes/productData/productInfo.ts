@@ -2,7 +2,7 @@
 
 import { defineType, defineField } from 'sanity';
 
-export default defineType({
+export const productInfo  = defineType({
   name: 'productInfo',
   title: 'Product Information',
   type: 'document',
