@@ -3,14 +3,10 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { fetchProductWithRating } from "@/sanity/lib/queries";
 import Image from "next/image";
 import ProductDescription from "@/app/components/ProductDescription";
+import { GetServerSideProps } from "next"; // Import for proper typing
 
-interface Props {
-  params: {
-    id: string;
-  };
-}
 
-export default async function ProductPage({ params }: Props) {
+export default async function ProductPage({ params }: any) {
   try {
     const product: { data: any } | null = await sanityFetch({
       query: fetchProductWithRating,
@@ -43,3 +39,4 @@ export default async function ProductPage({ params }: Props) {
     return <div>Error loading product</div>;
   }
 }
+
