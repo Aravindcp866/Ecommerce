@@ -28,8 +28,30 @@ export const Stocks = defineType({
         defineField({
             name: 'supportedSize',
             title: 'Supported Size',
+            type: 'array',
+            of: [{ type: 'string' }],
+            options: {
+                list: [
+                    { title: 'XL', value: 'xl' },
+                    { title: 'L', value: 'l' },
+                    { title: 'M', value: 'm' },
+                    { title: 'S', value: 's' },
+                ],
+            },
+            validation: (rule) => rule.required().min(1),
+        }),
+        
+        defineField({
+            name: 'productDescription',
+            title: 'Description',
             type: 'string',
             validation: (rule) => rule.required(),
         }),
+        defineField({
+            name: 'customerReview',
+            title: 'Rating',
+            type: "reference",
+            to: [{ type: 'productReview' }]
+        })
     ]
 })
