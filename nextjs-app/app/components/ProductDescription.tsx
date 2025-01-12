@@ -5,7 +5,7 @@ interface IProductInterface {
     size: Array<string>
     productDescription: string
 }
-export default function ProductDescription({ productName, productDescription, size }: IProductInterface) {
+export default function ({ productName, productDescription, size }: IProductInterface) {
     if(!productName || !productDescription || !size) return
     return (
         <>
@@ -21,7 +21,10 @@ export default function ProductDescription({ productName, productDescription, si
                     }
                 </div>
             {/* </div> */}
-            <RatingSection/>
+            <RatingSection
+             initialRating={4.5}
+             mode={'readonly'}
+             />
             <div className='underline-offset-1 pt-3'>See All Reviews </div>
         </>
     )
