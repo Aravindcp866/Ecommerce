@@ -16,7 +16,7 @@ export default function ({ productName, productDescription, size }: IProductInte
                 <div className='flex gap-4'>
                     {size &&
                         size?.map((e: string, i: number) => {
-                            return (<div key={i} className='p-1 w-8 text-center rounded-md bg-slate-500'>{e}</div>)
+                            return (<button key={i} className='p-1 w-8 rounded-sm outline outline-offset-2 outline-1'>{e}</button>)
                         })
                     }
                 </div>
