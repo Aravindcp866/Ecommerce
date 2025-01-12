@@ -8,7 +8,7 @@ import {link} from './objects/link'
 import {blockContent} from './objects/blockContent'
 import {Stocks} from './documents/Stocks'
 import { productReviews } from './customerReviews/productReviews'
-import { productInfo } from './productData/productInfo'
+import {HomeSlider} from './HomeSchema/HomeSliderImage'
 
 // Export an array of all the schema types.  This is used in the Sanity Studio configuration. https://www.sanity.io/docs/schema-types
 
@@ -26,5 +26,6 @@ export const schemaTypes = [
   link,
   Stocks,
   productReviews,
+  HomeSlider
   // productInfo,
 ]
