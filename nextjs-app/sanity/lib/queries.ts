@@ -106,6 +106,13 @@ export const fetchProductWithRating = defineQuery(
 }[0]`
 );
 
+export const fecthHomeSliderImage = defineQuery(`
+  *[_type == 'homeSliderImage' ][0]{
+'image':HomePageSliderImages[]{
+  asset->{url,_ref,altText,description,}
+}
+}`)
+
 
 
 
