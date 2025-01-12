@@ -11,7 +11,9 @@ export const HomeSlider = {
                 {
                     type: 'image',
                     title: 'Home Page Slider Image',
-
+                    options: {
+                        hotspot: true, // Enable hotspot for image cropping and resizing
+                    },
                 },
             ],
         },

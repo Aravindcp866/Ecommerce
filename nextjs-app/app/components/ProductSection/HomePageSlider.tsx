@@ -1,27 +1,29 @@
+'use client'
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-interface ImageProps {
-    url: string
-    id: string
-    title: string
-}
 
-export default function HomePageSlider(imageProps: Array<ImageProps>) {
+
+const HomePageSlider: React.FC<any> = ({ imageProps }) => {
     return (
         <Swiper
-            spaceBetween={30}
-            slidesPerView={3}
-            pagination={false}
-            navigation={false}
+        spaceBetween={30}
+        centeredSlides={true}
+            autoplay={{
+                delay: 2000,
+              }}
         >
-            {imageProps.map((item: ImageProps) => (
-                <SwiperSlide key={item.id}>
-                    <div className={`md:hidden flex flex-col items-center border border-gray-200 rounded-lg `}>
-                        <h3 className="text-center p-3">{item.title}</h3>
+            {imageProps?.length && imageProps?.map((item: any, i: number) => (
+                <SwiperSlide key={i}>
+                    <div className='w-56 h-60'>
+                    <img src={item?.asset?.url} className='' />
                     </div>
+                    
+
                 </SwiperSlide>
             ))}
         </Swiper>
     )
 }
+
+export default HomePageSlider
