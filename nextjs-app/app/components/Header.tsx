@@ -1,4 +1,3 @@
-"use client"
 import { useState } from "react";
 import Link from "next/link";
 import logo from "../public/images/Malayali Mood Logo.webp"

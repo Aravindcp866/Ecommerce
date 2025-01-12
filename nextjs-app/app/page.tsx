@@ -17,7 +17,7 @@ export default async function Page() {
     <>
       <ProductSlider className={''}/>
       <Section className={'flex-col'}>
-      <div className="grid grid-cols-2 gap-2 p-3 overflow-hidden">
+      <div className="grid grid-cols-2 gap-2 p-3">
 
         {data?.length && data.map((e: any, i: number) => {
           return (

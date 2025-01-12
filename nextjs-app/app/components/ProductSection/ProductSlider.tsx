@@ -1,6 +1,4 @@
-// nextjs-app/app/components/ProductSection/ProductSlider.tsx
 
-"use client"; // Ensure this is a client component
 
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';

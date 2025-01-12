@@ -1,4 +1,5 @@
 import React from 'react'
+import RatingSection from './RatingSection'
 interface IProductInterface {
     productName: string
     size: Array<string>
@@ -9,8 +10,8 @@ export default function ProductDescription({ productName, productDescription, si
     return (
         <>
             <h2 className='font-semibold text-4xl py-2'>{productName}</h2>
-            <span className='font-medium pb-2 text-gray-700'>{productDescription}</span>
-            <div>
+            <div className='font-medium pb-2 text-gray-700'>{productDescription}</div>
+            {/* <div className="h-full"> */}
                 <div className='pb-3 text-2xl '>Choose Size</div>
                 <div className='flex gap-4'>
                     {size &&
@@ -19,7 +20,8 @@ export default function ProductDescription({ productName, productDescription, si
                         })
                     }
                 </div>
-            </div>
+            {/* </div> */}
+            <RatingSection/>
             <div className='underline-offset-1 pt-3'>See All Reviews </div>
         </>
     )

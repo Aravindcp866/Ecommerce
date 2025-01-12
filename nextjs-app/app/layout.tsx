@@ -1,3 +1,4 @@
+
 import "./globals.css";
 import Header from "./components/Header";
 import Link from "next/link";
@@ -13,7 +14,7 @@ export default async function RootLayout({
   return (
     <html lang="en" className="bg-white text-black">
       <body className="font-sans ">
-        <section className="w-full h-full">
+        <section className="w-full h-[100vh]">
           <Header />
           {children} 
           <Footer/>

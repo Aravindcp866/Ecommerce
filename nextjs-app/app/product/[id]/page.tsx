@@ -3,20 +3,20 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { fetchProductWithRating } from "@/sanity/lib/queries";
 import Image from "next/image";
 import ProductDescription from "@/app/components/ProductDescription";
-import { GetServerSideProps } from "next"; // Import for proper typing
+
 
 
 export default async function ProductPage({ params }: any) {
   try {
     const product: { data: any } | null = await sanityFetch({
       query: fetchProductWithRating,
-      params: { productId: params.id },
+      params: { productId: params?.id },
     });
 
     const data = product?.data;
 
     return (
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 h-[900px]">
         <div className="w-80 h-64">
           <Image
             src={data?.image?.asset?.url || "/placeholder.png"}
@@ -31,6 +31,7 @@ export default async function ProductPage({ params }: any) {
               productDescription={data?.productDescription}
             />
           )}
+
         </div>
       </div>
     );
