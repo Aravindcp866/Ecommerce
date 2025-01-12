@@ -21,7 +21,6 @@ interface ProductSliderProps {
 const ProductSlider: React.FC<ProductSliderProps> = ({ className }) => {
     return (
         <div className={`p-4 ${className}`}>
-
         <Swiper
             spaceBetween={30}
             slidesPerView={3}
