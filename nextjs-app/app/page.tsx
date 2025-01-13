@@ -22,9 +22,9 @@ export default async function Page() {
   return (
     <>
       <ProductSlider className={''}/>
+      <HomePageSlider imageProps={image?.image}/>
       <Section className={'flex-col'}>
       <div className="grid grid-cols-2 gap-2 p-3">
-        <HomePageSlider imageProps={image?.image}/>
         {data?.length && data.map((e: any, i: number) => {
           return (
             <div className="lg:p-10 " key={i} >

@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
 import Link from "next/link";
-import logo from "../public/images/Malayali Mood Logo.webp"
+import logo from "../public/images/malayalimood.webp"
 import Image from "next/image";
 import CTA from "./Cta";
 
@@ -17,7 +17,7 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <Image src={logo} alt={""} width={90} height={90}/>
-          <p>Malayali Mood - Captures the modern Malayali Fasion vibe.
+          <p>Malayalee Made Crafted with Pride, Worn with Swag.
           </p>
           <div className="text-2xl font-bold text-gray-800">
             {/* <Link href="/">Logo</Link> */}
