@@ -6,7 +6,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
 
-const HomePageSlider: React.FC<any> = ({ imageProps }) => {
+const HeroSlider: React.FC<any> = ({ imageProps }) => {
     return (
         <div className="w-full">
             <Swiper
@@ -21,7 +21,7 @@ const HomePageSlider: React.FC<any> = ({ imageProps }) => {
                     clickable: true,
                 }}
                 modules={[Pagination, Autoplay]}
-                className="w-full"
+                className="w-full md:h-[30rem] h-full"
             >
                 {imageProps?.length > 0 && imageProps.map((item: any, i: number) => (
                     <SwiperSlide key={i}>
@@ -39,4 +39,4 @@ const HomePageSlider: React.FC<any> = ({ imageProps }) => {
     )
 }
 
-export default HomePageSlider
+export default HeroSlider

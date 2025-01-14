@@ -107,6 +107,12 @@ export const fetchProductWithRating = defineQuery(
 );
 
 export const fecthHomeSliderImage = defineQuery(`
+  *[_type == 'homeSliderImage' ][1]{
+'image':HomePageSliderImages[]{
+  asset->{url,_ref,altText,description,}
+}
+}`)
+export const fecthHomeBestSellersImage = defineQuery(`
   *[_type == 'homeSliderImage' ][0]{
 'image':HomePageSliderImages[]{
   asset->{url,_ref,altText,description,}
