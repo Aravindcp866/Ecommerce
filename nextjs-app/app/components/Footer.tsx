@@ -6,6 +6,7 @@ import Account from '../public/Icons/Account';
 import Cart from '../public/Icons/Cart';
 import Search from '../public/Icons/Search';
 import WishList from '../public/Icons/WishList';
+import Link from 'next/link';
 
 const Footer: React.FC = () => {
     return (
@@ -27,10 +28,10 @@ const Footer: React.FC = () => {
                     <Cart />
                     <span>Cart</span>
                 </div>
-                <div className="flex flex-col items-center">
+                <Link href="/signup" className="flex flex-col items-center">
                     <Account />
                     <span>Account</span>
-                </div>
+                </Link>
             </div>
         </div>
     );
