@@ -13,7 +13,7 @@ interface Slide {
   id: string;
 }
 
-const BestSellerSlider = ({ imageProps = [] }) => {
+const BestSellerSlider = ({ imageProps = [] }:any) => {
   // Type swiperRef as Swiper instance or null
   const [swiperRef, setSwiperRef] = useState<any>(null);
   const [additionalSlides, setAdditionalSlides] = useState<Slide[]>([]);
@@ -21,7 +21,7 @@ const BestSellerSlider = ({ imageProps = [] }) => {
 
   const allSlides = [
     ...additionalSlides.filter((slide) => slide.type === 'blank'),
-    ...(imageProps?.map((item, index) => ({
+    ...(imageProps?.map((item:any, index:number) => ({
       type: 'image',
       data: item,
       id: `image-${index}`,

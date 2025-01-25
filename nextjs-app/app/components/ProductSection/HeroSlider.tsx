@@ -6,7 +6,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
 
-const HeroSlider: React.FC<any> = ({ imageProps }) => {
+const HeroSlider: React.FC<any> = ({ imageProps }:any) => {
     return (
         <div className="w-full">
             <Swiper
