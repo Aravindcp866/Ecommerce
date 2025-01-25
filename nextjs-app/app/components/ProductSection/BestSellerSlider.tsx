@@ -9,13 +9,14 @@ import useMediaQuery from '../utils/useMediaHook';
 
 interface Slide {
   type: 'image' | 'blank';
-  data?: any;  // You can adjust the type for `data` based on what `item` represents
+  data?: any;
   id: string;
 }
 
 const BestSellerSlider = ({ imageProps = [] }) => {
-  const [swiperRef, setSwiperRef] = useState(null);
-  const [additionalSlides, setAdditionalSlides] = useState<Slide[]>([]); // Explicitly typed
+  // Type swiperRef as Swiper instance or null
+  const [swiperRef, setSwiperRef] = useState<any>(null);
+  const [additionalSlides, setAdditionalSlides] = useState<Slide[]>([]);
   const isMobile: any = useMediaQuery(767);
 
   const allSlides = [
@@ -31,7 +32,7 @@ const BestSellerSlider = ({ imageProps = [] }) => {
     <div className="w-full bg-gray-100 p-8 rounded-lg flex flex-col gap-3">
       <h2 className="text-center text-xl">Best Sellers</h2>
       <Swiper
-        onSwiper={setSwiperRef}
+        onSwiper={setSwiperRef} // Now setSwiperRef can accept Swiper instance
         slidesPerView={isMobile ? 1 : 3}
         spaceBetween={30}
         centeredSlides={true}
