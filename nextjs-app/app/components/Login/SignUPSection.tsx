@@ -13,7 +13,7 @@ const SignUp = () => {
     password: '',
   });
   const [message, setMessage] = useState('');
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({ username: '', email: '', password: '' });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -39,7 +39,7 @@ const SignUp = () => {
         const response = await loginApi.signup(formData.username, formData.password, formData.email); // Call the signup method
         setMessage(response.message);
         setFormData({ username: '', email: '', password: '' }); // Reset form
-        setErrors({});
+        setErrors({ username: '', email: '', password: '' });
         router.push('/login');
     } catch (error) {
       setMessage('Error signing up');

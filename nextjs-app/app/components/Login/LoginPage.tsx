@@ -10,7 +10,7 @@ const Login = () => {
     password: '',
   });
   const [message, setMessage] = useState('');
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({ email: '', password: '' });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target;
@@ -38,7 +38,7 @@ const Login = () => {
       const response = await api.login(formData.email, formData.password);
       setMessage(response.message);
       setFormData({ email: '', password: '' });
-      setErrors({});
+      setErrors({ email: '', password: '' });
       router.push('/dashboard');
     } catch (error) {
       setMessage('Error logging in');
