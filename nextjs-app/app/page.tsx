@@ -17,11 +17,11 @@ export default async function Page() {
     params: {},
   });
 
-  const {data:image} = await sanityFetch({
+  const {data:image}: { data: { image: string } | any } = await sanityFetch({
     query: fecthHomeSliderImage,
     params: {},
   })
-  const {data:bestImage} = await sanityFetch({
+  const {data:bestImage}: { data: { image: string } | any } = await sanityFetch({
     query: fecthHomeBestSellersImage,
     params: {},
   })

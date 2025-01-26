@@ -1,7 +1,8 @@
 'use client';
 import { useState } from 'react';
-import api from '../Api/loginApi'; // Adjust the import path as necessary
+import api from '../Api/loginApi'; 
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const Login = () => {
   const router = useRouter();
@@ -83,7 +84,7 @@ const Login = () => {
         </form>
         {message && <p className="mt-4 text-center text-gray-700">{message}</p>}
         <p className="mt-4 text-center text-gray-600">
-          Don't have an account? <a href="/signup" className="text-green-600 hover:underline">Sign Up</a>
+          Don't have an account? <Link href="/signup" className="text-green-600 hover:underline">Sign Up</Link>
         </p>
       </div>
     </div>
