@@ -1,6 +1,7 @@
 'use client'
 import Link from "next/link";
 import React, { useState } from "react";
+import Image from 'next/image'
 
 export default function ProductListItem({ props }: any) {
     console.log({ props })
@@ -10,7 +11,7 @@ export default function ProductListItem({ props }: any) {
     return (
         <div className="h-[300px] w-auto" >
             <Link href={`/product/${productId}`} className="block">
-                <img
+                <Image
                     className="w-full h-[300px]  object-cover rounded-sm"
                     src={props?.image?.asset?.url}
                     alt={props?.image?.asset?.altText || "Product Image"}

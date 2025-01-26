@@ -5,8 +5,9 @@ import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
+import Image from 'next/image'
 
-const HeroSlider: React.FC<any> = ({ imageProps }:any) => {
+const HeroSlider: React.FC<any> = ({ imageProps }: any) => {
     return (
         <div className="w-full">
             <Swiper
@@ -26,7 +27,7 @@ const HeroSlider: React.FC<any> = ({ imageProps }:any) => {
                 {imageProps?.length > 0 && imageProps.map((item: any, i: number) => (
                     <SwiperSlide key={i}>
                         <div className="w-full h-120">
-                            <img 
+                            <Image 
                                 src={item?.asset?.url} 
                                 alt={`Slide ${i + 1}`}
                                 className="w-full h-full object-cover"

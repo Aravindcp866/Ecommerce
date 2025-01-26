@@ -25,14 +25,11 @@ export default async function Page() {
     params: {},
   });
 
-  // Fetch home slider image
-  const { data: image }: { data: ImageData | any } = await sanityFetch({
+  const {data:image}: { data: { image: string } | any } = await sanityFetch({
     query: fecthHomeSliderImage,
     params: {},
-  });
-
-  // Fetch best sellers image
-  const { data: bestImage }: { data: ImageData | any} = await sanityFetch({
+  })
+  const {data:bestImage}: { data: { image: string } | any } = await sanityFetch({
     query: fecthHomeBestSellersImage,
     params: {},
   });
