@@ -8,22 +8,25 @@ import 'swiper/css/navigation';
 import useMediaQuery from '../utils/useMediaHook';
 import Image from 'next/image';
 
-
 interface Slide {
   type: 'image' | 'blank';
   data?: any;
   id: string;
 }
 
-const BestSellerSlider = ({ imageProps = [] }:any) => {
+interface BestSellerSliderProps {
+  imageProps?: { asset: { url: string } }[]; // Define the type of imageProps
+}
+
+const BestSellerSlider: React.FC<BestSellerSliderProps> = ({ imageProps = [] }) => {
   // Type swiperRef as Swiper instance or null
   const [swiperRef, setSwiperRef] = useState<any>(null);
   const [additionalSlides, setAdditionalSlides] = useState<Slide[]>([]);
-  const isMobile: any = useMediaQuery(767);
+  const isMobile: boolean = useMediaQuery(767);
 
   const allSlides = [
     ...additionalSlides.filter((slide) => slide.type === 'blank'),
-    ...(imageProps?.map((item:any, index:number) => ({
+    ...(imageProps?.map((item, index) => ({
       type: 'image',
       data: item,
       id: `image-${index}`,
@@ -57,6 +60,7 @@ const BestSellerSlider = ({ imageProps = [] }:any) => {
                   src={slide.data?.asset?.url}
                   alt={`Slide ${slide.id}`}
                   className="w-full h-full object-cover rounded-lg"
+                  layout="fill"
                 />
               </div>
             ) : (
