@@ -20,6 +20,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/product/[slug]/page.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/product/[slug]/page.tsx", "app/api/auth/login.js", "lib/auth/AuthService.js", "lib/auth/TokenService.js", "lib/auth/PasswordService.js", "lib/db/DynamoDBClient.js", "app/api/auth/register.js"],
   "exclude": ["node_modules"]
 }

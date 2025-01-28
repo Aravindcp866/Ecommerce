@@ -61,6 +61,7 @@ const BestSellerSlider: React.FC<BestSellerSliderProps> = ({ imageProps = [] }) 
                   alt={`Slide ${slide.id}`}
                   className="w-full h-full object-cover rounded-lg"
                   layout="fill"
+                  fill
                 />
               </div>
             ) : (

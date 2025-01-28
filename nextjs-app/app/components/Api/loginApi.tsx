@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_BASE_URL = '/localhost:3003/v1/auth';
+const API_BASE_URL = 'api/auth';
 
 class LoginApi {
     async login(email: any, password: string) {
