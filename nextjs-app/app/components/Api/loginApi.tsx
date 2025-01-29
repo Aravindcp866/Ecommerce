@@ -3,6 +3,9 @@ const API_BASE_URL = 'api/auth';
 
 class LoginApi {
     async login(email: any, password: string) {
+        console.log('hitted');
+        debugger
+
         const response = await axios.post(`/${API_BASE_URL}/login`, {
             email,
             password,
@@ -16,13 +19,21 @@ class LoginApi {
     }
 
     async signup(name: string, password: string, email: string) {
-        const response = await axios.post(`/${API_BASE_URL}/register`, {
-            name,
-            password,
-            email,
-        });
-        return response.data;
+        try {
+            console.log('Sending signup request...');
+            const response = await axios.post(`${API_BASE_URL}/register`, {
+                name,
+                password,
+                email,
+            });
+            console.log('Signup response:', response.data);
+            return response.data;
+        } catch (error:any) {
+            console.error('Signup error:', error.response?.data || error.message);
+            throw error;
+        }
     }
+    
 
 }
 

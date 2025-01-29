@@ -11,6 +11,8 @@
     "typegen": "sanity typegen generate"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.734.0",
+    "@aws-sdk/lib-dynamodb": "^3.734.0",
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -44,7 +46,8 @@
     "styled-components": "^6.1.13",
     "swiper": "^11.2.1",
     "tailwindcss": "^3.4.15",
-    "typescript": "5.6.3"
+    "typescript": "5.6.3",
+    "uuid": "^11.0.5"
   },
   "devDependencies": {
     "eslint": "^8.57.0",

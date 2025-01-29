@@ -1,29 +1,44 @@
 import DynamoDBClient from '@/lib/db/DynamoDBClient';
 import PasswordService from '@/lib/auth/PasswordService';
 import TokenService from '@/lib/auth/TokenService';
+const { v4: uuidv4 } = require('uuid');
 
 class AuthService {
   async registerUser(email, password) {
     const hashedPassword = await PasswordService.hashPassword(password);
+    const userId = uuidv4();
+
+    const payload = {
+      userId,
+      email,
+    };
+
+    const accessToken = TokenService.generateAccessToken({ userId: userId, email });
+    const refreshTokenPayload = { userId: userId, refreshTokenId: uuidv4() };
+    const refreshToken = TokenService.generateRefreshToken(refreshTokenPayload);
 
     const params = {
-      TableName: 'Users',
+      TableName: 'Users', 
       Item: {
-        UserId: Date.now().toString(),
-        Email: email,
+        UserId: userId,
+        email: email || 'test@example.com',
         PasswordHash: hashedPassword,
-        RefreshToken: null,
+        RefreshToken: refreshToken,
+        AccessToken: accessToken,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
       },
-    };
+    }; 
 
     await DynamoDBClient.put(params);
     return { message: 'User registered successfully' };
   }
 
   async loginUser(email, password) {
+    console.log(email,password,'u data')
     const params = {
       TableName: 'Users',
-      Key: { Email: email },
+      Key: { email: email },  
     };
 
     const data = await DynamoDBClient.get(params);

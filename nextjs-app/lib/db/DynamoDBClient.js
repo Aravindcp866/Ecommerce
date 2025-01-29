@@ -1,17 +1,29 @@
-import AWS from 'aws-sdk';
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { 
+  DynamoDBDocumentClient,
+  GetCommand,
+  PutCommand,
+  UpdateCommand 
+} from "@aws-sdk/lib-dynamodb";
 
-class DynamoDBClient {
+class DynamoDBService {  
   constructor() {
-    this.dynamoDB = new AWS.DynamoDB.DocumentClient({
-      region: process.env.AWS_REGION,
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    // Create the base DynamoDB client
+    const client = new DynamoDBClient({
+      region: process.env.AWS_REGION || 'eu-north-1',
+      credentials: {
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      }
     });
+
+    this.docClient = DynamoDBDocumentClient.from(client);
   }
 
   async get(params) {
     try {
-      return await this.dynamoDB.get(params).promise();
+      const command = new GetCommand(params);
+      return await this.docClient.send(command);
     } catch (error) {
       throw new Error(`DynamoDB Get Error: ${error.message}`);
     }
@@ -19,19 +31,27 @@ class DynamoDBClient {
 
   async put(params) {
     try {
-      return await this.dynamoDB.put(params).promise();
+      const command = new PutCommand(params);
+      console.log('Params:', params);
+
+      const data = await this.docClient.send(command);
+      console.log('DynamoDB Put Response:', data); // Log the response
+      return data;
     } catch (error) {
+      console.error('DynamoDB Put Error:', error); // Log the full error
       throw new Error(`DynamoDB Put Error: ${error.message}`);
     }
   }
+  
 
   async update(params) {
     try {
-      return await this.dynamoDB.update(params).promise();
+      const command = new UpdateCommand(params);
+      return await this.docClient.send(command);
     } catch (error) {
       throw new Error(`DynamoDB Update Error: ${error.message}`);
     }
   }
 }
 
-export default new DynamoDBClient();
+export default new DynamoDBService();

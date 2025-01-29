@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 
 class PasswordService {
   async hashPassword(password) {
-    const saltRounds = 10;
+    const saltRounds = 10; // Must be a number
     return await bcrypt.hash(password, saltRounds);
   }
 

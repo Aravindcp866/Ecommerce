@@ -1,8 +1,8 @@
 
+import Header from "@/app/components/Header";
 import "./globals.css";
-import Header from "./components/Header";
 import Link from "next/link";
-import Footer from "./components/Footer";
+import Footer from "@/app/components/Footer";
 
 export default async function RootLayout({
   children,
