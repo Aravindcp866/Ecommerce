@@ -15,6 +15,7 @@ export default function ProductListItem({ props }: any) {
                     className="w-full h-[300px]  object-cover rounded-sm"
                     src={props?.image?.asset?.url}
                     alt={props?.image?.asset?.altText || "Product Image"}
+                    fill
                 />
             </Link>
             <div className="text-gray-600 font-medium text-xs pt-2 flex items-center justify-between">

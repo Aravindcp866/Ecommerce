@@ -31,6 +31,7 @@ const HeroSlider: React.FC<any> = ({ imageProps }: any) => {
                                 src={item?.asset?.url} 
                                 alt={`Slide ${i + 1}`}
                                 className="w-full h-full object-cover"
+                                fill
                             />
                         </div>
                     </SwiperSlide>
