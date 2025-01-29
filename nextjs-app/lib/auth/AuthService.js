@@ -7,12 +7,6 @@ class AuthService {
   async registerUser(email, password) {
     const hashedPassword = await PasswordService.hashPassword(password);
     const userId = uuidv4();
-
-    const payload = {
-      userId,
-      email,
-    };
-
     const accessToken = TokenService.generateAccessToken({ userId: userId, email });
     const refreshTokenPayload = { userId: userId, refreshTokenId: uuidv4() };
     const refreshToken = TokenService.generateRefreshToken(refreshTokenPayload);
@@ -53,7 +47,7 @@ class AuthService {
     // Update Refresh Token in DynamoDB
     const updateParams = {
       TableName: 'Users',
-      Key: { Email: email },
+      Key: { email: email },
       UpdateExpression: 'SET RefreshToken = :refreshToken',
       ExpressionAttributeValues: { ':refreshToken': refreshToken },
     };
