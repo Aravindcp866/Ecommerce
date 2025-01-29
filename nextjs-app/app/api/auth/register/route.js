@@ -1,10 +1,11 @@
+import { NextRequest } from 'next/server'; // Import NextRequest
 import AuthService from '@/lib/auth/AuthService';
 
 /**
  * Handles POST requests to /api/auth/register
  *
  * @function
- * @param {Object} req - The request object
+ * @param {NextRequest} req - The request object
  * @property {string} req.body.email - The email of the user to register
  * @property {string} req.body.password - The password chosen by the user
  * @returns {Object} - The response object
