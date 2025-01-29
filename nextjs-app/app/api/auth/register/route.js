@@ -1,15 +1,5 @@
-import { NextRequest } from 'next/server'; // Import NextRequest
 import AuthService from '@/lib/auth/AuthService';
 
-/**
- * Handles POST requests to /api/auth/register
- *
- * @function
- * @param {NextRequest} req - The request object
- * @property {string} req.body.email - The email of the user to register
- * @property {string} req.body.password - The password chosen by the user
- * @returns {Object} - The response object
- */
 export async function POST(req) {
   try {
     const { email, password } = await req.json();
