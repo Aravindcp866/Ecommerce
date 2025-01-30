@@ -11,16 +11,16 @@ const Header = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-  const menu = [{heading:'Home',route:'/'},
-    {heading:'About',route:'/about'},
-    {heading:'Contact',route:'/contact'}
+  const menu = [{ heading: 'Home', route: '/' },
+  { heading: 'About', route: '/about' },
+  { heading: 'Contact', route: '/contact' }
   ]
 
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-white shadow-md" style={{ backgroundImage: 'linear-gradient(264deg, #FFD400 -7.2%, #FF9D00 103.36%);' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <Image src={logo} alt={""} width={90} height={90}/>
+          <Image src={logo} alt={""} width={90} height={90} />
           <p className="font-bold">UBV(Unitied By Vibe)
           </p>
           <div className="text-2xl font-bold text-gray-800">
@@ -51,15 +51,15 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden sm:flex space-x-6">
             {
-              menu?.map((e: any,i:number) => {
+              menu?.map((e: any, i: number) => {
                 return (
-                  <Link key={i} href={e.route} className="text-gray-600 hover:text-indigo-500" onClick={(e:any) => setIsMobileMenuOpen(false)}>
+                  <Link key={i} href={e.route} className="text-black hover:text-indigo-500" onClick={(e: any) => setIsMobileMenuOpen(false)}>
                     {e.heading}
                   </Link>
                 )
               })
             }
-            <CTA value={"Buy Now  "}/>
+            <CTA value={"Buy Now  "} />
           </nav>
         </div>
 
@@ -67,15 +67,15 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="sm:hidden flex flex-col space-y-2 bg-gray-100 p-4 rounded-md shadow-md">
             {
-              menu?.map((e: any,i:number) => {
+              menu?.map((e: any, i: number) => {
                 return (
-                  <Link key={i} href={e.route} className="text-gray-600 hover:text-indigo-500" onClick={(e:any) => setIsMobileMenuOpen(false)}>
+                  <Link key={i} href={e.route} className="text-black hover:text-indigo-500 font-semibold" onClick={(e: any) => setIsMobileMenuOpen(false)}>
                     {e.heading}
                   </Link>
                 )
               })
             }
-            <CTA value={"Buy Now  "}/>
+            <CTA value={"Buy Now  "} />
           </div>
         )}
       </div>

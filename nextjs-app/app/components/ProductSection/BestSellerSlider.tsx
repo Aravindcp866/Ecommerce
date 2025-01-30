@@ -35,7 +35,7 @@ const BestSellerSlider: React.FC<BestSellerSliderProps> = ({ imageProps = [] }) 
 
   return (
     <div className="w-full bg-gray-100 p-8 rounded-lg flex flex-col gap-3">
-      <h2 className="text-center text-xl">Best Sellers</h2>
+      <h2 className="text-center text-2xl font-sans font-semibold">Best Sellers</h2>
       <Swiper
         onSwiper={setSwiperRef} // Now setSwiperRef can accept Swiper instance
         slidesPerView={isMobile ? 1 : 3}
