@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from 'next/image'
 
 export default function ProductListItem({ props }: any) {
-    console.log({ props })
+    console.log(props?.image?.asset.url)
     const [whisListed, setToWhishList] = useState(false);
     const productId = props?._id || '';
 
@@ -15,7 +15,9 @@ export default function ProductListItem({ props }: any) {
                     className="w-full h-[300px]  object-cover rounded-sm"
                     src={props?.image?.asset?.url}
                     alt={props?.image?.asset?.altText || "Product Image"}
-                    fill
+                    width={500}
+                    height={500}
+                    
                 />
             </Link>
             <div className="text-gray-600 font-medium text-xs pt-2 flex items-center justify-between">

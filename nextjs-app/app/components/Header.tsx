@@ -11,13 +11,17 @@ const Header = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+  const menu = [{heading:'Home',route:'/'},
+    {heading:'About',route:'/about'},
+    {heading:'Contact',route:'/contact'}
+  ]
 
   return (
     <header className="bg-white shadow-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <Image src={logo} alt={""} width={90} height={90}/>
-          <p>Malayalee Made Crafted with Pride, Worn with Swag.
+          <p className="font-bold">UBV(Unitied By Vibe)
           </p>
           <div className="text-2xl font-bold text-gray-800">
             {/* <Link href="/">Logo</Link> */}
@@ -46,21 +50,15 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden sm:flex space-x-6">
-            <Link href="/" className="text-gray-600 hover:text-indigo-500">
-              Home
-            </Link>
-            <Link href="/about" className="text-gray-600 hover:text-indigo-500">
-              About
-            </Link>
-            <Link
-              href="/services"
-              className="text-gray-600 hover:text-indigo-500"
-            >
-              Services
-            </Link>
-            <Link href="/contact" className="text-gray-600 hover:text-indigo-500">
-              Contact
-            </Link>
+            {
+              menu?.map((e: any,i:number) => {
+                return (
+                  <Link key={i} href={e.route} className="text-gray-600 hover:text-indigo-500" onClick={(e:any) => setIsMobileMenuOpen(false)}>
+                    {e.heading}
+                  </Link>
+                )
+              })
+            }
             <CTA value={"Buy Now  "}/>
           </nav>
         </div>
@@ -68,27 +66,15 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="sm:hidden flex flex-col space-y-2 bg-gray-100 p-4 rounded-md shadow-md">
-            <Link href="/" className="block text-gray-600 hover:text-indigo-500">
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="block text-gray-600 hover:text-indigo-500"
-            >
-              About
-            </Link>
-            <Link
-              href="/services"
-              className="block text-gray-600 hover:text-indigo-500"
-            >
-              Services
-            </Link>
-            <Link
-              href="/contact"
-              className="block text-gray-600 hover:text-indigo-500"
-            >
-              Contact
-            </Link>
+            {
+              menu?.map((e: any,i:number) => {
+                return (
+                  <Link key={i} href={e.route} className="text-gray-600 hover:text-indigo-500" onClick={(e:any) => setIsMobileMenuOpen(false)}>
+                    {e.heading}
+                  </Link>
+                )
+              })
+            }
             <CTA value={"Buy Now  "}/>
           </div>
         )}
