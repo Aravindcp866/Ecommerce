@@ -17,7 +17,7 @@ const Header = () => {
   ]
 
   return (
-    <header className="bg-white shadow-md" style={{ backgroundImage: 'linear-gradient(264deg, #FFD400 -7.2%, #FF9D00 103.36%);' }}>
+    <header className="shadow-md bg-yellow-gradient">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <Image src={logo} alt={""} width={90} height={90} />

@@ -3,6 +3,7 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { fetchProductWithRating } from "@/sanity/lib/queries";
 import Image from "next/image";
 import ProductDescription from "@/app/components/ProductDescription";
+import { BuyNowButton } from "@/app/components/BuyNowButton";
 
 
 
@@ -32,6 +33,7 @@ export default async function ProductPage({ params }: any) {
             productDescription={data?.productDescription}
           />
         )}
+        <BuyNowButton/>
 
       </div>
 

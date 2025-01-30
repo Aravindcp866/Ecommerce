@@ -6,7 +6,12 @@ module.exports = {
       sans: ['Inter', 'sans-serif'],
       manrope: ['Manrope', 'system-ui', 'sans-serif'],
     },
-    extend: {},
+
+    extend: {
+      backgroundImage: {
+       'yellow-gradient': 'linear-gradient(165.49deg, #FFC72C 0%, #FFAA00 79.43%)',
+      },
+    },
   },
   plugins: [],
 }
