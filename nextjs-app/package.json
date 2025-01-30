@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.734.0",
+    "lucide-react": "^0.454.0",
     "@aws-sdk/lib-dynamodb": "^3.734.0",
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
