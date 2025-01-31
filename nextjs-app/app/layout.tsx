@@ -1,14 +1,25 @@
-
+"use client"
 import Header from "@/app/components/Header";
 import "./globals.css";
-import Link from "next/link";
-import Footer from "@/app/components/Footer";
 
-export default async function RootLayout({
+import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
+import Loader from "./components/Loader";
+
+export default  function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [loading, setLoading] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setLoading(true);
+    const timeout = setTimeout(() => setLoading(false), 300);
+    return () => clearTimeout(timeout);
+  }, [pathname]);
+
 
 
   return (
@@ -17,7 +28,8 @@ export default async function RootLayout({
         <section className="w-full h-[100vh]">
           <Header />
           {children} 
-          <Footer/>
+          {loading && <Loader />}
+          {/* <Footer/> */}
         </section>
       </body>
     </html>
