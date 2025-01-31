@@ -4,9 +4,9 @@
   "scripts": {
     "predev": "npm run typegen",
     "dev": "next --turbo",
+    "start": "next start -p 80",
     "prebuild": "npm run typegen",
     "build": "next build",
-    "start": "next start",
     "lint": "next lint",
     "typegen": "sanity typegen generate"
   },
