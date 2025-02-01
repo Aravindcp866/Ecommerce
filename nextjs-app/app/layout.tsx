@@ -24,6 +24,7 @@ export default  function RootLayout({
 
   return (
     <html lang="en" className="bg-white text-black">
+      <meta name="google-site-verification" content="tqcf21sne-RWs8PzP2nacZx5C8qo0sESclDkktGRC5Q" />
       <body className="font-sans ">
         <section className="w-full h-[100vh]">
           <Header />
