@@ -4,6 +4,9 @@ import Link from "next/link";
 import logo from "../public/images/logo.png"
 import Image from "next/image";
 import CTA from "./Cta";
+import Head from "next/head";
+import { json } from "../jsonld";
+
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

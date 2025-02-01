@@ -1,4 +1,4 @@
-{
+export const json = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "United by Vibe",
