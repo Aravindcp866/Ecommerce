@@ -18,7 +18,7 @@ export const json = {
     "availableLanguage": ["English", "Hindi"]
   },
   "description": "United by Vibe (UBV) is a leading fashion brand offering trendy T-shirts and apparel in India.",
-  "foundingDate": "2025",
+  "foundingDate": "2025-01-01",
   "founders": [
     {
       "@type": "Person",
@@ -31,31 +31,38 @@ export const json = {
   ],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Your Street Name",
-    "addressLocality": "Your City",
-    "addressRegion": "Your State",
-    "postalCode": "Your ZIP Code",
+    "streetAddress": "123 Fashion Street",
+    "addressLocality": "Kochi",
+    "addressRegion": "Kerala",
+    "postalCode": "682001",
     "addressCountry": "IN"
   },
-  "makesOffer": {
-    "@type": "Offer",
-    "itemOffered": {
-      "@type": "Product",
-      "name": "Trendy T-Shirts",
-      "category": "Clothing",
-      "brand": {
-        "@type": "Brand",
-        "name": "United by Vibe"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.7",
-        "reviewCount": "150"
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "Trendy T-Shirts",
+        "image":"https://cdn.sanity.io/images/oqisuor5/production/847e6095b1aac62d38b0c0f64704896a19a428a1-902x710.png",
+        "category": "Clothing",
+        "brand": {
+          "@type": "Brand",
+          "name": "United by Vibe"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.7",
+          "reviewCount": "150"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "799",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.unitedbyvibe.com/t-shirts",
+          "itemCondition": "https://schema.org/NewCondition"
+        }
       }
-    },
-    "price": "799",
-    "priceCurrency": "INR",
-    "availability": "https://schema.org/InStock",
-    "url": "https://www.unitedbyvibe.com/t-shirts"
-  }
+    }
+  ]
 };
