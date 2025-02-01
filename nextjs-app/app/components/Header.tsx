@@ -75,7 +75,7 @@ const Header = () => {
                 )
               })
             }
-            <CTA value={"Buy Now  "} />
+            {/* <CTA value={"Buy Now  "} /> */}
           </div>
         )}
       </div>

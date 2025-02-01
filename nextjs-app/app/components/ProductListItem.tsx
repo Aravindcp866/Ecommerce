@@ -47,11 +47,11 @@ export default function ProductListItem({ props }: any) {
                 <div className="block text-gray-600  text-xs line-through">
                     <i className="fa-sharp fa-solid fa-indian-rupee-sign"></i> 1200
                 </div>
-                <div className="block text-gray-600 font-extrabold text-lg ">
+                <div className="block text-gray-600 font-extrabold text-sm ">
                     <i className="fa-sharp fa-solid fa-indian-rupee-sign"></i> 599
                 </div>
                 <div className="block text-green-800 font-bold text-xs ">
-                    <i className="fa-sharp fa-solid fa-indian-rupee-sign"></i> 51% off
+                     51% off
                 </div>
             </div>
 
