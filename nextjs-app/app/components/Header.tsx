@@ -4,6 +4,9 @@ import Link from "next/link";
 import logo from "../public/images/logo.png"
 import Image from "next/image";
 import CTA from "./Cta";
+import Head from "next/head";
+import { json } from "../jsonld";
+
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,7 +23,7 @@ const Header = () => {
     <header className="shadow-md bg-yellow-gradient">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <Image src={logo} alt={""} width={90} height={90} />
+          <Image src={logo} alt={"Trendy T-shirts in India"} width={90} height={90} />
           <p className="font-bold">UBV(Unitied By Vibe)
           </p>
           <div className="text-2xl font-bold text-gray-800">
@@ -75,7 +78,7 @@ const Header = () => {
                 )
               })
             }
-            <CTA value={"Buy Now  "} />
+            {/* <CTA value={"Buy Now  "} /> */}
           </div>
         )}
       </div>

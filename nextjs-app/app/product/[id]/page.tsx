@@ -21,7 +21,7 @@ export default async function ProductPage({ params }: any) {
 
         <Image
           src={data?.image?.asset?.url || "/placeholder.png"}
-          alt={data?.stockName || "Product image"}
+          alt={"Trendy T-shirts in India"}
           width={300}
           height={150}
           className="w-full h-fit rounded-md"
