@@ -44,7 +44,7 @@ const MobileSidebar = () => {
         </div>
 
         <ul className="space-y-6 px-6">
-          {menu?.map((item) => (
+          {menu?.map((item:any) => (
             <li key={item.route}>
               <Link href={item.route} className="text-lg hover:text-blue-500 transition-colors duration-200" onClick={toggleSidebar}>
                 {item.heading}
