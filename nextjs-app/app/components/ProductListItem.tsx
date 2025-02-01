@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Image from 'next/image'
 
 export default function ProductListItem({ props }: any) {
-    console.log(props?.image?.asset.url)
     const [whisListed, setToWhishList] = useState(false);
     const productId = props?._id || '';
 
