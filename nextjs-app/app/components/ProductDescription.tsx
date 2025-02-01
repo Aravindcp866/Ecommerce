@@ -13,6 +13,17 @@ export default function ProductDescription({ productName, productDescription, si
         <>
             <h2 className="font-semibold text-4xl py-2 capitalize ">{productName}</h2>
             <div className="font-medium pb-2 text-gray-700">{productDescription}</div>
+            <div className="flex flex-row items-center gap-2">
+                <div className="block text-gray-600  text-xs line-through">
+                    <i className="fa-sharp fa-solid fa-indian-rupee-sign"></i> 1200
+                </div>
+                <div className="block text-gray-600 font-extrabold text-sm ">
+                    <i className="fa-sharp fa-solid fa-indian-rupee-sign"></i> 599
+                </div>
+                <div className="block text-green-800 font-bold text-xs ">
+                    51% off
+                </div>
+            </div>
             <div className="pb-3 text-xl font-semibold">Choose Size</div>
             <div className="flex gap-4">
                 {size?.map((e: string, i: number) => {

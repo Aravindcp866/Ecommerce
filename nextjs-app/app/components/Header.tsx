@@ -6,12 +6,17 @@ import Image from "next/image";
 import CTA from "./Cta";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import MobileSidebar from "./common/MobileSidebar";
+import Head from "next/head";
+import { json } from "../jsonld";
+import router from "next/router";
 
 
-export const menu = [{ heading: 'Home', route: '/' },
+export const menu : any = [
+  { heading: 'Home', route: '/' },
   { heading: 'About', route: '/about' },
-  { heading: 'Contact', route: '/contact' }
-  ]
+  { heading: 'Contact', route: '/contact' },
+  { heading: 'Cart', route: '/cart' }
+];
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -19,6 +24,7 @@ const Header = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
 
 
   return (
@@ -41,15 +47,22 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden sm:flex space-x-6">
-            {
+          {
               menu?.map((e: any, i: number) => {
+                console.log("Menu Item:", e);
                 return (
-                  <Link key={i} href={e.route} className="text-black hover:text-indigo-500" onClick={(e: any) => setIsMobileMenuOpen(false)}>
+                  <Link key={i} href={e.route} 
+                  onClick={() => {
+                    toggleMobileMenu()
+                    
+                  }}
+                  >
                     {e.heading}
                   </Link>
-                )
+                );
               })
             }
+
             <CTA value={"Buy Now  "} />
           </nav>.
 
@@ -60,13 +73,20 @@ const Header = () => {
         {/* {isMobileMenuOpen && (
 
           <div className="absolute sm:hidden flex flex-col space-y-2 bg-gray-100 p-4 rounded-md shadow-md">
+        {isMobileMenuOpen && (
+          <div className="sm:hidden flex flex-col space-y-2 bg-gray-100 p-4 rounded-md shadow-md relative top-[-19px]">
             {
               menu?.map((e: any, i: number) => {
+                console.log("Menu Item:", e);
                 return (
-                  <Link key={i} href={e.route} className="text-black hover:text-indigo-500 font-semibold" onClick={(e: any) => setIsMobileMenuOpen(false)}>
+                  <Link key={i} href={e.route}
+                  onClick={() => {
+                    toggleMobileMenu()
+                   
+                  }}>
                     {e.heading}
                   </Link>
-                )
+                );
               })
             }
           </div>
