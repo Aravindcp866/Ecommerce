@@ -29,7 +29,7 @@ const HeroSlider: React.FC<any> = ({ imageProps }: any) => {
                         <div className="w-full h-120">
                             <Image 
                                 src={item?.asset?.url} 
-                                alt={`Slide ${i + 1}`}
+                                alt={"Trendy T-shirts in India"}
                                 className="w-full h-full object-cover"
                                 fill
                             />

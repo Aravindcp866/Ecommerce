@@ -14,7 +14,7 @@ export default function CoverImage(props: CoverImageProps) {
     <Image
       className="rounded-2xl shadow-md transition-shadow object-cover"
       fill={true}
-      alt={stegaClean(source?.alt) || ""}
+      alt={"Trendy T-shirts in India"}
       src={
         urlForImage(source)
           ?.height(720)

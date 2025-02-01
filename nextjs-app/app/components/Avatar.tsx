@@ -20,7 +20,7 @@ export default function Avatar({ person, date }: Props) {
       {picture?.asset?._ref ? (
         <div className="mr-4 h-9 w-9">
           <Image
-            alt={picture?.alt || ""}
+            alt={'Trendy T-shirts in India'}
             className="h-full rounded-full object-cover"
             height={48}
             width={48}

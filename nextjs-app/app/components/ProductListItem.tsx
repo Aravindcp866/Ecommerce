@@ -14,7 +14,7 @@ export default function ProductListItem({ props }: any) {
                 <Image
                     className="w-full h-[300px]  object-cover rounded-sm"
                     src={props?.image?.asset?.url}
-                    alt={props?.image?.asset?.altText || "Product Image"}
+                    alt={"Trendy T-shirts in India"}
                     width={500}
                     height={500}
 

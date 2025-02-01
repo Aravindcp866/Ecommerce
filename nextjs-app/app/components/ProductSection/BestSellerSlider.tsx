@@ -58,7 +58,7 @@ const BestSellerSlider: React.FC<BestSellerSliderProps> = ({ imageProps = [] }) 
               <div className="w-full h-full flex items-center justify-center">
                 <Image
                   src={slide.data?.asset?.url}
-                  alt={`Slide ${slide.id}`}
+                  alt={"Trendy T-shirts in India"}
                   className="w-full h-full object-cover rounded-lg"
                   layout="fill"
                   fill
