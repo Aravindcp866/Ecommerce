@@ -6,7 +6,7 @@ const nextConfig = {
     // appDir: true, // Comment or remove this line
   },
   images: {
-    domains: ['cdn.sanity.io'],
+    domains: ['cdn.sanity.io','media3.giphy.com'],
   },
 };
 

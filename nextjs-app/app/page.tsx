@@ -46,7 +46,7 @@ export default async function Page() {
           {data?.length &&
             data.map((e: Product, i: number) => {
               return (
-                <div className="lg:p-10 pb-3" key={i}>
+                <div className="" key={i}>
                   <ProductListItem props={e} />
                 </div>
               );

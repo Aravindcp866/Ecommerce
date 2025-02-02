@@ -28,22 +28,22 @@ const Header = () => {
   return (
     <header className="shadow-md bg-yellow-gradient">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-4 text-white">
         {isMobile &&<MobileSidebar/>}
          <Link href="/" className="flex flex-col items-center"><p className="font-bold text-white">UBV</p>
          </Link>
-         {isMobile && <div className="text-2xl font-bold flex gap-1 text-gray-800">
+         {isMobile && <div className="text-2xl font-bold flex gap-2 text-gray-800">
             <Link href="/signup" className="flex flex-col items-center">
-            <HiOutlineUserCircle color="white" />
+            <HiOutlineUserCircle color="white" className="h-10 w-10" />
             </Link>
             <Link href="/cart" className="flex flex-col items-center">
-            <BsHandbag  color="white" />
+            <BsHandbag  color="white" className="h-10 w-10" />
             </Link>
           </div>}
    
 
           {/* Desktop Navigation */}
-        {!isMobile && <nav className="hidden md:flex space-x-6">
+        {!isMobile && <nav className="hidden md:flex space-x-6 items-center">
           {
               menu?.map((e: any, i: number) => {
                 return (
