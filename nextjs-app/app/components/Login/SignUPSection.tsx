@@ -47,12 +47,11 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex items-center flex-col justify-center min-h-screen bg-gray-100">
-      <div className='w-24 h-[10rem]'>
-        <Image width={300} height={100} src={"https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDJ2amx0MXVtdXI3dWJkNDQ1d2JxZzJybjBzMGVja211YjMwdmlsNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MZ7yrimhG3DThJqHjl/giphy.gif"} alt='Best Tshirt in India' />
-      </div>
-      <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h1 className="text-2xl font-bold text-center mb-6">Sign Up</h1>
+    <div className="flex items-center flex-col justify-center min-h-screen bg-gray-100 bg-no-repeat
+    bg-[url(https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDJ2amx0MXVtdXI3dWJkNDQ1d2JxZzJybjBzMGVja211YjMwdmlsNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MZ7yrimhG3DThJqHjl/giphy.gif)]">
+
+      <div className="bg-white p-8 rounded-lg shadow-md w-96 bg-transparent">
+        <h1 className="text-2xl font-bold text-center mb-6 text-red-700">Sign Up</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <input
