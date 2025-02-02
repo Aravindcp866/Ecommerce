@@ -5,9 +5,6 @@ import { useData } from "../components/Context/GlobalContext";
 
 export default function CartPage() {
   const { bag,addToBag } = useData();
-
-  console.log({ bag })
-
   return (<div>
     {
       !bag?.length ? <EmptyCart /> : <SelectedProduct productList={bag} addToBag={addToBag} />
