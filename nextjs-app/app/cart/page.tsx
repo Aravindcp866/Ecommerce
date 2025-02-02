@@ -1,5 +1,11 @@
+'use client';
+import { useData } from "../components/Context/GlobalContext";
 
 export default function CartPage() {
+  const { bag } = useData();
+
+  console.log({ bag })
+
   return <div className="flex items-center  flex-col gap-4 pt-5 px-14">
 
     <i className="fa-solid fa-cart-shopping w-10 h-10"></i>

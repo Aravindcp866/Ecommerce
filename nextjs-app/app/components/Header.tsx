@@ -46,7 +46,6 @@ const Header = () => {
         {!isMobile && <nav className="hidden md:flex space-x-6">
           {
               menu?.map((e: any, i: number) => {
-                console.log("Menu Item:", e);
                 return (
                   <Link key={i} href={e.route} 
                   onClick={() => {

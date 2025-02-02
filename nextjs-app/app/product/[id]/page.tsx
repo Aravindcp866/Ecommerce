@@ -11,7 +11,7 @@ import { useData } from "@/app/components/Context/GlobalContext";
 
 export default async function ProductPage({ params }: any) {
 
-  const { addToBag } = useData();
+  // const { addToBag } = useData();
 
   try {
     const product: { data: any } | null = await sanityFetch({
@@ -38,7 +38,7 @@ export default async function ProductPage({ params }: any) {
             productDescription={data?.productDescription}
           />
         )}
-        <BuyNowButton product={data} onAddToBag={addToBag}/>
+        <BuyNowButton product={data}/>
 
       </div>
 

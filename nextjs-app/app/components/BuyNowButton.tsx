@@ -1,11 +1,11 @@
-"use client"
+'use client'
 import Link from "next/link";
+import { useData } from "./Context/GlobalContext";
 
-export function BuyNowButton({ product, onAddToBag }:any) {
-    const playAudio = () => {
-        const audio = new Audio("/audio/audio.mp3");
-        audio.play();
-    };
+export function BuyNowButton({ product, onAddToBag }: any) {
+    console.log(product)
+
+    const { addToBag } = useData();
 
     const handleAddToBag = () => {
         if (product) {
@@ -19,13 +19,9 @@ export function BuyNowButton({ product, onAddToBag }:any) {
             className="inline-block w-full h-14 text-lg font-semibold bg-yellow-gradient text-black/90 rounded-md hover:bg-yellow-600 transition text-center leading-[3.5rem]"
             href="/cart"
             onClick={(e) => {
-                e.preventDefault();
-                playAudio();
-                setTimeout(() => {
-                    window.location.href = "/cart";
-                }, 700);
+                addToBag(product)
+                // e.preventDefault()
             }}
-            
         >
             <i className="fa-solid fa-bag-shopping px-2"></i>
             Add to Bag
