@@ -1,7 +1,6 @@
 // nextjs-app/pages/signup.tsx
 'use client'
 import { useState } from 'react';
-import axios from 'axios';
 import loginApi from '../Api/loginApi';
 import { useRouter } from 'next/navigation';
 

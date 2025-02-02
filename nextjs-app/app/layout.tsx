@@ -5,8 +5,8 @@ import "./globals.css";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import Loader from "./components/Loader";
-import Head from "next/head";
 import { json } from "./jsonld";
+
 
 export default function RootLayout({
   children,
@@ -36,7 +36,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans ">
         <section className="w-full h-[100vh]">
-          <Header />
+          {['/signup', '/login'].includes(pathname) ? null : <Header />}
           {children}
           {loading && <Loader />}
           {/* <Footer/> */}

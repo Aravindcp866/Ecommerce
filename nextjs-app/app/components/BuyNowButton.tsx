@@ -1,11 +1,18 @@
 "use client"
 import Link from "next/link";
 
-export function BuyNowButton() {
+export function BuyNowButton({ product, onAddToBag }:any) {
     const playAudio = () => {
         const audio = new Audio("/audio/audio.mp3");
         audio.play();
     };
+
+    const handleAddToBag = () => {
+        if (product) {
+          onAddToBag(product);
+        }
+      };
+    
 
     return (
         <Link
@@ -18,6 +25,7 @@ export function BuyNowButton() {
                     window.location.href = "/cart";
                 }, 700);
             }}
+            
         >
             <i className="fa-solid fa-bag-shopping px-2"></i>
             Add to Bag

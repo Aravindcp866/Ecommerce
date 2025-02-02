@@ -5,6 +5,7 @@ import ProductSlider from "./components/ProductSection/ProductSlider";
 import Section from "./components/Structure/Section";
 import HeroSlider from "./components/ProductSection/HeroSlider";
 import BestSellerSlider from "./components/ProductSection/BestSellerSlider";
+import { DataProvider } from "./components/Context/GlobalContext";
 
 // Define the expected shape of the fetched data
 interface ImageData {
@@ -36,6 +37,7 @@ export default async function Page() {
 
   return (
     <>
+    <DataProvider>
       <ProductSlider className={''} />
       <HeroSlider imageProps={image?.image} />
       {bestImage && <BestSellerSlider imageProps={bestImage.image} />}
@@ -51,6 +53,7 @@ export default async function Page() {
             })}
         </div>
       </Section>
+      </DataProvider>
     </>
   );
 }

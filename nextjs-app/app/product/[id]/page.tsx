@@ -1,13 +1,18 @@
+
 import React from "react";
 import { sanityFetch } from "@/sanity/lib/live";
 import { fetchProductWithRating } from "@/sanity/lib/queries";
 import Image from "next/image";
 import ProductDescription from "@/app/components/ProductDescription";
 import { BuyNowButton } from "@/app/components/BuyNowButton";
+import { useData } from "@/app/components/Context/GlobalContext";
 
 
 
 export default async function ProductPage({ params }: any) {
+
+  const { addToBag } = useData();
+
   try {
     const product: { data: any } | null = await sanityFetch({
       query: fetchProductWithRating,
@@ -33,7 +38,7 @@ export default async function ProductPage({ params }: any) {
             productDescription={data?.productDescription}
           />
         )}
-        <BuyNowButton/>
+        <BuyNowButton product={data} onAddToBag={addToBag}/>
 
       </div>
 

@@ -49,12 +49,11 @@ const Login = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-green-400 to-blue-500">
       <div className="bg-white p-10 rounded-lg shadow-lg w-96">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-6">Welcome Back!</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <input
               type="email"
-              name="email" // Ensures the field is linked to the `email` state
+              name="email" 
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
@@ -66,7 +65,7 @@ const Login = () => {
           <div className="mb-4">
             <input
               type="password"
-              name="password" // Ensures the field is linked to the `password` state
+              name="password" 
               placeholder="Password"
               value={formData.password}
               onChange={handleChange}
