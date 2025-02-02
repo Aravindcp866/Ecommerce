@@ -42,10 +42,7 @@ export function BuyNowButton({ product, onAddToBag }: any) {
 
             <Link
                 className="inline-block w-full h-14 text-lg font-semibold bg-yellow-gradient text-black/90 rounded-md hover:bg-yellow-600 transition text-center leading-[3.5rem]"
-                href="/cart"
-                onClick={(e) => {
-                    addToBag(product)
-                }} >
+                href="/cart">
                 <i className="fa-solid fa-bag-shopping px-2"></i>
                 Checkout Bag
             </Link>
