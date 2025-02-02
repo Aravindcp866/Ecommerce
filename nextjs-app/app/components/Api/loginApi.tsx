@@ -3,9 +3,6 @@ const API_BASE_URL = 'api/auth';
 
 class LoginApi {
     async login(email: any, password: string) {
-        console.log('hitted');
-        debugger
-
         const response = await axios.post(`/${API_BASE_URL}/login`, {
             email,
             password,

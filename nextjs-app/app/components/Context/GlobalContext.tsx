@@ -24,7 +24,7 @@ const GlobalContext = createContext<any>({
 export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, dispatch] = useReducer(bagReducer, initialState);
 
-  const addToBag = (product: any) => { debugger
+  const addToBag = (product: any) => {
     dispatch({ type: ADD_TO_BAG, payload: product });
   };
 
