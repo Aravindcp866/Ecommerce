@@ -30,7 +30,7 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
         {isMobile &&<MobileSidebar/>}
-         <Link href="/" className="flex flex-col items-center"><p className="font-bold">UBV</p>
+         <Link href="/" className="flex flex-col items-center"><p className="font-bold text-white">UBV</p>
          </Link>
          {isMobile && <div className="text-2xl font-bold flex gap-1 text-gray-800">
             <Link href="/signup" className="flex flex-col items-center">

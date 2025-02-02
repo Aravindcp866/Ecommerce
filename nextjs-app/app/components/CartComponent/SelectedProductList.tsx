@@ -78,7 +78,7 @@ export function SelectedProduct({ productList, addToBag }: any) {
         </div>
       ))}
       <div className="p-4 w-full">
-        <button className=" w-full h-14 text-lg font-semibold bg-yellow-gradient text-black/90 rounded-md hover:bg-yellow-600 transition text-center leading-[3.5rem]">Go To Checkout</button>
+        <button className=" w-full h-14 text-lg font-semibold bg-yellow-gradient text-white/90 rounded-md hover:bg-yellow-600 transition text-center leading-[3.5rem]">Go To Checkout</button>
       </div>
     </div>
   );

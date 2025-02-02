@@ -27,12 +27,12 @@ const MobileSidebar = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed z-10 top-0 left-0 h-full w-64 bg-gray-900 text-white transition-transform duration-300 ease-in-out transform ${
+        className={`fixed z-10 top-0 left-0 h-full w-64 bg-gray-900 bg-yellow-gradient transition-transform duration-300 ease-in-out transform ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } lg:translate-x-0 lg:flex lg:items-center lg:justify-start lg:h-auto lg:w-64 lg:relative`}
       >
         <div className="flex justify-between items-center p-6 lg:p-4">
-          <h2 className="text-xl font-semibold">Ubv</h2>
+          <h2 className="text-xl  text-white font-semibold">Ubv</h2>
           <Image src={logo} alt={"Trendy T-shirts in India"} width={90} height={90} />
 {/* 
           <button
@@ -46,7 +46,7 @@ const MobileSidebar = () => {
         <ul className="space-y-6 px-6">
           {menu?.map((item:any) => (
             <li key={item.route}>
-              <Link href={item.route} className="text-lg hover:text-blue-500 transition-colors duration-200" onClick={toggleSidebar}>
+              <Link href={item.route} className="text-lg text-white/90 hover:text-blue-500 transition-colors duration-200" onClick={toggleSidebar}>
                 {item.heading}
               </Link>
             </li>
