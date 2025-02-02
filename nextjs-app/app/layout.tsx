@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import Loader from "./components/Loader";
 import { json } from "./jsonld";
+import { DataProvider } from "./components/Context/GlobalContext";
 
 
 export default function RootLayout({
@@ -35,12 +36,13 @@ export default function RootLayout({
         <meta name="google-site-verification" content="tqcf21sne-RWs8PzP2nacZx5C8qo0sESclDkktGRC5Q" />
       </head>
       <body className="font-sans ">
-        <section className="w-full h-[100vh]">
-          {['/signup', '/login'].includes(pathname) ? null : <Header />}
-          {children}
-          {loading && <Loader />}
-          {/* <Footer/> */}
-        </section>
+       
+
+          <DataProvider children={<section className="w-full h-[100vh]">
+            {['/signup', '/login'].includes(pathname) ? null : <Header />}
+            {children}
+            {loading && <Loader />}
+          </section>} />
       </body>
     </html>
   );
