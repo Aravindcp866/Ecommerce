@@ -1,14 +1,11 @@
 "use client"
 import { useState } from "react";
 import Link from "next/link";
-import logo from "../public/images/logo.png"
-import Image from "next/image";
 import CTA from "./Cta";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import MobileSidebar from "./common/MobileSidebar";
-import Head from "next/head";
-import { json } from "../jsonld";
-import router from "next/router";
+import useMediaQuery from "./utils/useMediaHook";
+import { BsHandbag } from "react-icons/bs";
 
 
 export const menu : any = [
@@ -20,6 +17,7 @@ export const menu : any = [
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isMobile: boolean = useMediaQuery(767);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -31,22 +29,21 @@ const Header = () => {
     <header className="shadow-md bg-yellow-gradient">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          {/* <Image src={logo} alt={"Trendy T-shirts in India"} width={90} height={90} /> */}
-
-         <MobileSidebar/>
-
-          <p className="font-bold">UBV(Unitied By Vibe)
-          </p>
-          <div className="text-2xl font-bold text-gray-800">
-            {/* <Link href="/">Logo</Link> */}
+        {isMobile &&<MobileSidebar/>}
+         <Link href="/" className="flex flex-col items-center"><p className="font-bold">UBV</p>
+         </Link>
+         {isMobile && <div className="text-2xl font-bold flex gap-1 text-gray-800">
             <Link href="/signup" className="flex flex-col items-center">
-            <HiOutlineUserCircle />
+            <HiOutlineUserCircle color="white" />
             </Link>
-          </div>
+            <Link href="/cart" className="flex flex-col items-center">
+            <BsHandbag  color="white" />
+            </Link>
+          </div>}
    
 
           {/* Desktop Navigation */}
-          <nav className="hidden sm:flex space-x-6">
+        {!isMobile && <nav className="hidden md:flex space-x-6">
           {
               menu?.map((e: any, i: number) => {
                 console.log("Menu Item:", e);
@@ -64,7 +61,7 @@ const Header = () => {
             }
 
             <CTA value={"Buy Now  "} />
-          </nav>.
+          </nav>}
 
         </div>
 
