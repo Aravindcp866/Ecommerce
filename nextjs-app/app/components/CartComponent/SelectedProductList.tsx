@@ -24,7 +24,7 @@ export function SelectedProduct({ productList, addToBag }: any) {
   return (
     <div className="space-y-4">
       {productList?.map((ele: any, i: number) => (
-        <div
+        <><div
           key={ele?._id + i}
           className="flex items-center border border-gray-300 rounded-lg p-4 gap-4 shadow-md"
         >
@@ -76,9 +76,26 @@ export function SelectedProduct({ productList, addToBag }: any) {
           </button>
 
         </div>
+        </>
       ))}
+      <div className="flex flex-col w-full gap-3 items-center pl-5 pr-5">
+        <div className="flex flex-row  w-full justify-between">
+          <p className="font-semibold text-gray-600 text-xl">Total</p>
+          <p className="font-semibold text-black/85 text-xl">
+            <i className="fa-sharp fa-solid fa-indian-rupee-sign"></i>{price * quantity
+            }</p>
+        </div>
+        <div className="flex flex-row w-full justify-between">
+          <p className="font-semibold text-gray-600 text-xl">Shipping Charge</p>
+          <p className="font-semibold text-black/85 text-xl">
+            Free
+          </p>
+
+        </div>
+
+      </div>
       <div className="p-4 w-full">
-        <button className=" w-full h-14 text-lg font-semibold bg-yellow-gradient text-white/90 rounded-md hover:bg-yellow-600 transition text-center leading-[3.5rem]">Go To Checkout</button>
+        <button className=" w-full h-14 text-lg font-semibold bg-yellow-gradient text-white/90 rounded-md transition text-center leading-[3.5rem]">Pay {price * quantity}</button>
       </div>
     </div>
   );
